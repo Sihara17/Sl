@@ -1,0 +1,1410 @@
+# encoding: utf-8
+# 2025 R1
+SetScriptVersion(Version="25.1.122")
+system1 = GetSystem(Name="SYS")
+engineeringData1 = system1.GetContainer(ComponentName="Engineering Data")
+material1 = engineeringData1.GetMaterial(Name="Structural Steel")
+matlProp1 = material1.GetProperty(Name="Strain-Life Parameters")
+matlProp1.Delete()
+matlProp2 = material1.GetProperty(Name="Coefficient of Thermal Expansion")
+matlProp2.Delete(
+    Definition="Secant",
+    Behavior="Isotropic")
+matlProp3 = material1.GetProperty(Name="Density")
+matlProp3.SetData(
+    Variables=["Density"],
+    Values=[["8000 [kg m^-3]"]])
+matlProp4 = material1.GetProperty(Name="Elasticity")
+matlProp4.SetData(
+    Variables=["Young's Modulus"],
+    Values=[["220 [Pa]"]])
+matlProp4.SetData(
+    Variables=["Poisson's Ratio"],
+    Values=[["0.28"]])
+matlProp4.SetVariableProperty(
+    VariableName="Young's Modulus",
+    Property="Unit",
+    Value="GPa")
+matlProp4.SetData(
+    Variables=["Young's Modulus"],
+    Values=[["2.2E-07 [GPa]"]])
+matlProp4.SetData(
+    Variables=["Young's Modulus"],
+    Values=[["220 [GPa]"]])
+matlProp5 = material1.GetProperty(Name="S-N Curve")
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=1,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=2,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=3,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=4,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=5,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=6,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=7,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=8,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=9,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=10,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.BeginBatchUpdate()
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Variables=["Cycles", "Mean Stress"],
+    Values=[["2130.365237", "2531.573395", "2929.532318", "3248.120037", "3622.661685", "4192.137784", "4851.134533", "5613.724423", "6496.192112", "7517.382184", "8699.101554"], ["0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=-1,
+    Variables=["Cycles", "Mean Stress"],
+    Values=[["10066.58515", "11649.03478", "13480.24273", "15599.31338", "18051.49824", "20889.16229", "24172.90217", "27972.84024", "32370.12195", "37458.64867", "43347.08292", "50161.16876", "58046.41702", "67171.21255", "77730.41003", "89949.49493", "104089.3987", "120452.0706", "139386.9261", "161298.3078", "186654.1205", "215995.8228", "249949.9894", "289241.6919", "334709.9815", "387325.8069", "448212.7483", "518671.0107", "600205.1891", "694556.3982", "803739.4528", "1048098.604", "1212857.876", "1403517.019", "1624147.447", "1879460.594", "2174908.522", "2516800.349", "2912436.974", "3370266.988", "3900067.081", "4513150.825", "5222610.265", "6043595.491", "6993638.163", "8093025.887", "9454446.046"], ["0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]"]])
+matlProp5.EndBatchUpdate()
+matlProp5.BeginBatchUpdate()
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Variables=["Alternating Stress", "Mean Stress"],
+    Values=[["400.6654238 [Pa]", "397.16026 [Pa]", "394.8685344 [Pa]", "393.8094092 [Pa]", "389.4052707 [Pa]", "386.093125 [Pa]", "382.7124522 [Pa]", "379.3317793 [Pa]", "375.9967913 [Pa]", "372.5704337 [Pa]", "369.1212337 [Pa]", "365.8547728 [Pa]", "362.4055728 [Pa]", "359.0705848 [Pa]", "355.7127543 [Pa]", "352.3092391 [Pa]", "348.9514087 [Pa]", "345.5250511 [Pa]", "342.190063 [Pa]", "338.8322326 [Pa]", "335.4515598 [Pa]", "332.0252022 [Pa]", "328.6673717 [Pa]", "325.2866989 [Pa]", "321.8831837 [Pa]", "318.5025109 [Pa]", "315.1675228 [Pa]", "311.7640076 [Pa]", "308.33765 [Pa]", "305.0026619 [Pa]", "301.6448315 [Pa]", "298.2641587 [Pa]", "294.9291706 [Pa]", "291.502813 [Pa]", "288.0992978 [Pa]", "284.7643098 [Pa]", "281.3379522 [Pa]", "277.9801217 [Pa]", "274.6222913 [Pa]", "270.3262915 [Pa]", "267.8381033 [Pa]", "264.3432185 [Pa]", "257.8720799 [Pa]", "255.4049937 [Pa]", "252.8991841 [Pa]", "250.2037828 [Pa]", "250.1580981 [Pa]", "250.2037828 [Pa]", "250.2037828 [Pa]", "250.1809405 [Pa]", "250.2037828 [Pa]", "250.1580981 [Pa]", "250.2037828 [Pa]", "250.2037828 [Pa]", "250.2037828 [Pa]", "250.1580981 [Pa]", "250.1580981 [Pa]", "250.3419793 [Pa]"], ["0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]"]])
+matlProp5.EndBatchUpdate()
+matlProp6 = material1.GetProperty(Name="Tensile Yield Strength")
+matlProp6.SetVariableProperty(
+    VariableName="Tensile Yield Strength",
+    Property="Unit",
+    Value="MPa")
+matlProp6.SetData(
+    Variables=["Tensile Yield Strength"],
+    Values=[["250 [MPa]"]])
+matlProp7 = material1.GetProperty(Name="Compressive Yield Strength")
+matlProp7.SetVariableProperty(
+    VariableName="Compressive Yield Strength",
+    Property="Unit",
+    Value="MPa")
+matlProp7.SetData(
+    Variables=["Compressive Yield Strength"],
+    Values=[["250 [MPa]"]])
+matlProp8 = material1.GetProperty(Name="Tensile Ultimate Strength")
+matlProp8.SetVariableProperty(
+    VariableName="Tensile Ultimate Strength",
+    Property="Unit",
+    Value="MPa")
+matlProp8.SetData(
+    Variables=["Tensile Ultimate Strength"],
+    Values=[["460 [MPa]"]])
+matlProp9 = material1.GetProperty(Name="Compressive Ultimate Strength")
+matlProp9.SetVariableProperty(
+    VariableName="Compressive Ultimate Strength",
+    Property="Unit",
+    Value="MPa")
+matlProp9.SetData(
+    Variables=["Compressive Ultimate Strength"],
+    Values=[["0 [MPa]"]])
+matlProp6.SetData(
+    Variables=["Tensile Yield Strength"],
+    Values=[["900 [MPa]"]])
+matlProp6.SetData(
+    Variables=["Tensile Yield Strength"],
+    Values=[["642 [MPa]"]])
+matlProp7.SetData(
+    Variables=["Compressive Yield Strength"],
+    Values=[["642 [MPa]"]])
+matlProp8.SetData(
+    Variables=["Tensile Ultimate Strength"],
+    Values=[["770 [MPa]"]])
+matlProp9.Delete()
+matlProp5.BeginBatchUpdate()
+matlProp5.SetVariableProperty(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    VariableName="Alternating Stress",
+    Property="Unit",
+    Value="MPa")
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Variables=["Alternating Stress"],
+    Values=[["0.00040066542379999995 [MPa]", "0.00039716025999999996 [MPa]", "0.0003948685344 [MPa]", "0.0003938094092 [MPa]", "0.0003894052707 [MPa]", "0.000386093125 [MPa]", "0.00038271245219999994 [MPa]", "0.00037933177929999997 [MPa]", "0.00037599679129999994 [MPa]", "0.00037257043370000003 [MPa]", "0.0003691212337 [MPa]", "0.0003658547728 [MPa]", "0.0003624055728 [MPa]", "0.0003590705848 [MPa]", "0.00035571275429999996 [MPa]", "0.0003523092391 [MPa]", "0.00034895140869999996 [MPa]", "0.00034552505109999995 [MPa]", "0.000342190063 [MPa]", "0.0003388322326 [MPa]", "0.0003354515598 [MPa]", "0.0003320252022 [MPa]", "0.0003286673717 [MPa]", "0.0003252866989 [MPa]", "0.0003218831837 [MPa]", "0.0003185025109 [MPa]", "0.00031516752279999995 [MPa]", "0.0003117640076 [MPa]", "0.00030833765 [MPa]", "0.0003050026619 [MPa]", "0.0003016448315 [MPa]", "0.0002982641587 [MPa]", "0.0002949291706 [MPa]", "0.00029150281299999997 [MPa]", "0.0002880992978 [MPa]", "0.00028476430979999996 [MPa]", "0.0002813379522 [MPa]", "0.00027798012169999995 [MPa]", "0.00027462229129999994 [MPa]", "0.0002703262915 [MPa]", "0.00026783810329999996 [MPa]", "0.00026434321849999994 [MPa]", "0.0002578720799 [MPa]", "0.0002554049937 [MPa]", "0.0002528991841 [MPa]", "0.0002502037828 [MPa]", "0.00025015809809999997 [MPa]", "0.0002502037828 [MPa]", "0.0002502037828 [MPa]", "0.0002501809405 [MPa]", "0.0002502037828 [MPa]", "0.00025015809809999997 [MPa]", "0.0002502037828 [MPa]", "0.0002502037828 [MPa]", "0.0002502037828 [MPa]", "0.00025015809809999997 [MPa]", "0.00025015809809999997 [MPa]", "0.0002503419793 [MPa]"]])
+matlProp5.EndBatchUpdate()
+matlProp5.BeginBatchUpdate()
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Variables=["Alternating Stress", "Mean Stress"],
+    Values=[["400.6654238 [MPa]", "397.16026 [MPa]", "394.8685344 [MPa]", "393.8094092 [MPa]", "389.4052707 [MPa]", "386.093125 [MPa]", "382.7124522 [MPa]", "379.3317793 [MPa]", "375.9967913 [MPa]", "372.5704337 [MPa]", "369.1212337 [MPa]", "365.8547728 [MPa]", "362.4055728 [MPa]", "359.0705848 [MPa]", "355.7127543 [MPa]", "352.3092391 [MPa]", "348.9514087 [MPa]", "345.5250511 [MPa]", "342.190063 [MPa]", "338.8322326 [MPa]", "335.4515598 [MPa]", "332.0252022 [MPa]", "328.6673717 [MPa]", "325.2866989 [MPa]", "321.8831837 [MPa]", "318.5025109 [MPa]", "315.1675228 [MPa]", "311.7640076 [MPa]", "308.33765 [MPa]", "305.0026619 [MPa]", "301.6448315 [MPa]", "298.2641587 [MPa]", "294.9291706 [MPa]", "291.502813 [MPa]", "288.0992978 [MPa]", "284.7643098 [MPa]", "281.3379522 [MPa]", "277.9801217 [MPa]", "274.6222913 [MPa]", "270.3262915 [MPa]", "267.8381033 [MPa]", "264.3432185 [MPa]", "257.8720799 [MPa]", "255.4049937 [MPa]", "252.8991841 [MPa]", "250.2037828 [MPa]", "250.1580981 [MPa]", "250.2037828 [MPa]", "250.2037828 [MPa]", "250.1809405 [MPa]", "250.2037828 [MPa]", "250.1580981 [MPa]", "250.2037828 [MPa]", "250.2037828 [MPa]", "250.2037828 [MPa]", "250.1580981 [MPa]", "250.1580981 [MPa]", "250.3419793 [MPa]"], ["0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]"]])
+matlProp5.EndBatchUpdate()
+modelComponent1 = system1.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+matlProp4.SetData(
+    Variables=["Young's Modulus"],
+    Values=[["207 [GPa]"]])
+matlProp4.SetData(
+    Variables=["Poisson's Ratio"],
+    Values=[["0.33"]])
+modelComponent1.Refresh()
+model1.Edit()
+matlProp5.BeginBatchUpdate()
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Variables=["Cycles", "Mean Stress"],
+    Values=[["1.686113714", "7.341714288", "10.71058334", "16.49729419", "25.4104475", "39.82134198", "62.40501182", "96.12117348", "145.5173157", "220.2978636", "333.5077235", "504.8955077", "738.3956842", "1098.704179", "1579.299274", "2309.68141", "3377.845037", "4940.004732", "7446.410596", "10890.16908", "15926.5704", "23755.05895", "48334.05403", "79545.95291", "108074.8067", "172894.9783", "232871.1816", "352542.4005", "562106.9038", "1632758.367", "2341173.392", "3294022.735", "4988492.686", "6766944.007", "14127401.62", "20684746.39", "42492882.37", "58666550.73"], ["0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]"]])
+matlProp5.EndBatchUpdate()
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=2,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=3,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=4,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=5,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=6,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=7,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=8,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=9,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=10,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=11,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=12,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=13,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=14,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=15,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=16,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=17,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=18,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=19,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=20,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=21,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=22,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=23,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=24,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=25,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=26,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=27,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=28,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=29,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=30,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=31,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=33,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=35,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=37,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=39,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=41,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=44,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=45,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=46,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=47,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=48,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=49,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=50,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=51,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=52,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=53,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=54,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=55,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=56,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=57,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=43,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=42,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=57,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=56,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=55,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=54,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=53,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=52,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=51,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=50,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=49,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=48,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=47,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=46,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=45,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=44,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=43,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=42,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=41,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=40,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=39,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=38,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=37,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=36,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=35,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=34,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=33,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=32,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=31,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=30,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=29,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=28,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=27,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=26,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=25,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=24,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=23,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=22,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=21,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=20,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=19,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=18,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=17,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=16,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=15,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=13,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=11,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=10,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=9,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=8,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=7,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=32,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=34,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=36,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=38,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=40,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Index=1,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.BeginBatchUpdate()
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Variables=["Cycles", "Mean Stress"],
+    Values=[["1.686113714", "7.341714288", "10.71058334", "16.49729419", "25.4104475", "39.82134198", "62.40501182", "96.12117348", "145.5173157", "220.2978636", "333.5077235", "504.8955077", "738.3956842", "1098.704179", "1579.299274", "2309.68141", "3377.845037", "4940.004732", "7446.410596", "10890.16908", "15926.5704", "23755.05895", "48334.05403", "79545.95291", "108074.8067", "172894.9783", "232871.1816", "352542.4005", "562106.9038", "1632758.367", "2341173.392", "3294022.735", "4988492.686", "6766944.007", "14127401.62", "20684746.39", "42492882.37", "58666550.73"], ["0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]"]])
+matlProp5.EndBatchUpdate()
+matlProp5.BeginBatchUpdate()
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Log-Log"},
+    Variables=["Alternating Stress", "Mean Stress"],
+    Values=[["1035.241023 [MPa]", "1037.104072 [MPa]", "1035.331039 [MPa]", "1033.590302 [MPa]", "1030.447932 [MPa]", "1025.971751 [MPa]", "1021.088644 [MPa]", "1011.060835 [MPa]", "996.4115133 [MPa]", "981.0646053 [MPa]", "964.5550528 [MPa]", "946.6503268 [MPa]", "927.5829563 [MPa]", "903.2836853 [MPa]", "881.7747612 [MPa]", "857.8242836 [MPa]", "834.8039216 [MPa]", "811.5510307 [MPa]", "786.4960407 [MPa]", "764.1151332 [MPa]", "741.7342257 [MPa]", "712.4162058 [MPa]", "681.1023127 [MPa]", "656.958061 [MPa]", "648.1529663 [MPa]", "616.9516902 [MPa]", "607.3470494 [MPa]", "583.2367081 [MPa]", "559.9124731 [MPa]", "521.8200101 [MPa]", "509.263449 [MPa]", "498.7996481 [MPa]", "479.4587141 [MPa]", "479.9648064 [MPa]", "462.6972097 [MPa]", "460.2773588 [MPa]", "451.5962795 [MPa]", "451.5962795 [MPa]"], ["0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]"]])
+matlProp5.EndBatchUpdate()
+matlProp5.SetQualifier(
+    Qualifier="Interpolation",
+    Value="Semi-Log")
+matlProp6.SetData(
+    Variables=["Tensile Yield Strength"],
+    Values=[["924 [MPa]"]])
+matlProp8.SetData(
+    Variables=["Tensile Ultimate Strength"],
+    Values=[["800 [MPa]"]])
+matlProp6.SetData(
+    Variables=["Tensile Yield Strength"],
+    Values=[["800 [MPa]"]])
+matlProp7.SetData(
+    Variables=["Compressive Yield Strength"],
+    Values=[["800 [MPa]"]])
+matlProp8.SetData(
+    Variables=["Tensile Ultimate Strength"],
+    Values=[["924 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=1,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=2,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=3,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=4,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=5,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=6,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=7,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=8,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=9,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=10,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=11,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=13,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=14,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=15,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=16,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=17,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=18,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=19,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=20,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=21,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=23,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=22,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=24,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=25,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=26,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=27,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=28,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=29,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=30,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=31,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=32,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=33,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=34,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=35,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=36,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=37,
+    Variables=["Cycles"],
+    Values=[["7.8886090522101181E-31"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=37,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=36,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=35,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=34,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=33,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=32,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=31,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=12,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=27,
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=28)
+matlProp5.BeginBatchUpdate()
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=56)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=55)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=54)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=53)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=52)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=51)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=50)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=49)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=48)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=47)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=46)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=45)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=44)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=43)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=42)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=41)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=40)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=39)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=38)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=37)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=36)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=35)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=34)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=33)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=32)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=31)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=30)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=29)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=28)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=27)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=26)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=25)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=24)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=23)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=22)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=21)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=20)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=19)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=18)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=17)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=16)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=15)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=14)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=13)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=12)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=11)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=10)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=9)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=8)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=7)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=6)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=5)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=4)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=3)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=2)
+matlProp5.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=1)
+matlProp5.EndBatchUpdate()
+matlProp5.BeginBatchUpdate()
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Variables=["Alternating Stress", "Mean Stress"],
+    Values=[["1035.241023 [MPa]"], ["0 [Pa]"]])
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=-1,
+    Variables=["Alternating Stress", "Mean Stress"],
+    Values=[["1037.104072 [MPa]", "1035.331039 [MPa]", "1033.590302 [MPa]", "1030.447932 [MPa]", "1025.971751 [MPa]", "1021.088644 [MPa]", "1011.060835 [MPa]", "996.4115133 [MPa]", "981.0646053 [MPa]", "964.5550528 [MPa]", "946.6503268 [MPa]", "927.5829563 [MPa]", "903.2836853 [MPa]", "881.7747612 [MPa]", "857.8242836 [MPa]", "834.8039216 [MPa]", "811.5510307 [MPa]", "786.4960407 [MPa]", "764.1151332 [MPa]", "741.7342257 [MPa]", "712.4162058 [MPa]", "681.1023127 [MPa]", "656.958061 [MPa]", "648.1529663 [MPa]", "616.9516902 [MPa]", "607.3470494 [MPa]", "583.2367081 [MPa]", "559.9124731 [MPa]", "521.8200101 [MPa]", "509.263449 [MPa]", "498.7996481 [MPa]", "479.4587141 [MPa]", "479.9648064 [MPa]", "462.6972097 [MPa]", "460.2773588 [MPa]", "451.5962795 [MPa]", "451.5962795 [MPa]"], ["0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]"]])
+matlProp5.EndBatchUpdate()
+matlProp5.BeginBatchUpdate()
+matlProp5.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Variables=["Cycles", "Mean Stress"],
+    Values=[["1.686113714", "7.341714288", "10.71058334", "16.49729419", "25.4104475", "39.82134198", "62.40501182", "96.12117348", "145.5173157", "220.2978636", "333.5077235", "504.8955077", "738.3956842", "1098.704179", "1579.299274", "2309.68141", "3377.845037", "4940.004732", "7446.410596", "10890.16908", "15926.5704", "23755.05895", "48334.05403", "79545.95291", "108074.8067", "172894.9783", "232871.1816", "352542.4005", "562106.9038", "1632758.367", "2341173.392", "3294022.735", "4988492.686", "6766944.007", "14127401.62", "20684746.39", "42492882.37", "58666550.73"], ["0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]", "0 [Pa]"]])
+matlProp5.EndBatchUpdate()
+modelComponent1.Refresh()
+model1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
