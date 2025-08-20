@@ -22808,16 +22808,48 @@ fini
 /com,****************************************************************************
 /com,*************************    SOLUTION       ********************************
 /com,****************************************************************************
+/com,******************** SOLUTION ********************
 /solu
-antype,0                   ! static analysis
-_thickRatio=  1     ! Ratio of thick parts in the model
-eqsl,pcg,1e-8,,,,,,1
-cntr,print,1               ! print out contact info and also make no initial contact an error
-cncheck,dmp		!	Enable program controlled contact splitting for distributed memory parallel run
-dmpoption,emat,no             ! Don't combine emat file for DANSYS
-dmpoption,esav,no             ! Don't combine esav file for DANSYS
-nldiag,cont,iter           ! print out contact info each equilibrium iteration
-rescontrol,,none                 ! Do not keep any restart files
+antype,static           ! Static analysis
+allsel,all              ! Select all nodes/elements
+csys,0                  ! Gunakan global koordinat (FY = global Y)
+
+/com,===== Tambahan Beban Pegas =====
+F,12327,FY,108155
+F,3453,FY,108155
+F,2711,FY,108155
+F,14982,FY,108155
+F,13917,FY,108155
+F,4195,FY,108155
+F,13392,FY,108155
+F,3950,FY,108155
+
+/com,===== Pengaturan Solver dari Workbench =====
+eqsl,pcg,1e-8,,,,,1
+cntr,print,1
+cncheck,dmp
+dmoption,emat,no
+dmoption,esav,no
+nldiag,cont,iter
+rescontrol,,none
+
+/com,===== Load Step Controls (otomatis WB) =====
+sfe,_CM32_3,3,pres,1,0.
+sfe,_CM32_4,4,pres,1,0.
+sfe,_CM32_3,3,pres,1,6.06764599299656
+sfe,_CM32_4,4,pres,1,6.06764599299656
+sfe,_CM32_3,3,pres,1,0.
+sfe,_CM32_4,4,pres,1,0.
+nsel,all
+esel,all
+sfco,none
+/gopr
+nsub,1,1,1
+time,1
+
+/com,===== Solve Command =====
+solve
+finish
 /com,****************************************************
 /com,******************* SOLVE FOR LS 1 OF 1 ****************
 /com,*********** Set Force Without Surface Effect Elements "Force" ***********
@@ -22859,7 +22891,7 @@ solve
 CEWRITE,file,ce,,INTE
 /com,****************************************************
 /com,*************** FINISHED SOLVE FOR LS 1 *************
-*get,_wallasol,active,,time,wall
+*get,_wallasol,active,,time,wall90-
 /nopr
 *get,_numnode,node,0,count
 *get,_numelem,elem,0,count
